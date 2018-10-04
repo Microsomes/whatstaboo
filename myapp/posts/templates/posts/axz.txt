@@ -1,0 +1,17 @@
+
+       <!-- {% for post in editorspicks %}
+        <div style="background:#F1948A;min-height:100px;margin:10px;" class="row z-depth-2 card">
+          <div class="card-image">
+             <img class="responsiv e-img" width="20px;" src="{{post.thumbnail.url}}">
+             <a href="/posts/details/{{post.id}}"><span class="card-title flow-text">{{post.title}}</span></a>
+             <a style="text-align:center;" href="/posts/details/{{post.id}}" class="btn-floating halfway-fab waves-effect waves-light red btn-floating pulse">Open</a>
+           </div>
+    </div>
+       {% endfor %} -->
+
+editors_choice= EditorsChoice.objects.values('post').all()
+    print(editors_choice)
+    EditorsPosts=[]
+
+    for id in editors_choice:
+        idConfirmed= id['post']

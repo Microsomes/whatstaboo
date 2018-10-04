@@ -1,0 +1,17 @@
+  <div class="nav-wrapper">
+                
+               <a href="/posts/"> <img class="img-responsive hide-on-med-and-down" style="margin-top:7px;" width="50px;" src="/media/media/big-anchor.png"/></a>
+              <a style="margin-left:10px;font-family: 'Josefin Sans', sans-serif;              " href="/posts/" class="brand-logo hide-on-med-and-down">Whatstaboo.com</a>
+              <div class="row">
+ 
+              </div>
+
+              <div class="row hide-on-medium-and-up">
+                <div style="background:;position: relative;;top:-15;width:350px;display:flex;justify-content:space-around" class="col s12 hide-on-large-and-up">
+                    <a class="hide-on-large-and-up" href="/posts/">WhatsTaboo.com</a>
+                    <a href="/posts/add">Add Post</a>
+                    <a href="/posts/search">Search</a>
+                </div>
+              </div>
+               
+          </div>

@@ -1,0 +1,41 @@
+{% extends 'posts/main.html' %}
+{% block content %}
+
+ <style>
+ .conc{
+     background:#003366;
+     padding: 20px;
+     color:white;
+     border-radius: 5px;
+ }
+ input[type="text"]{
+     border:none;
+     outline: none;
+     background: white;
+     color:white;
+ }
+ textarea{
+     font-size: 20px;
+     color:white;
+ }
+ img { max-width: 100%; }
+*{
+  max-width: 100%;
+}
+  </style>
+<div class="container">
+                 <h2 style="color:lightgray">Suggest a Topic</h2>
+        <form style="background:#317D8B" class="conc" action="/posts/add/" enctype="multipart/form-data" method="POST">
+            {% csrf_token %}
+
+             {{form}}
+             {{form.media}}
+
+            
+            <input class="btn" type="submit"/>
+            <label>you will be redirected back once submitted (:</label>
+        </form>
+</div>
+ 
+ 
+{% endblock %}

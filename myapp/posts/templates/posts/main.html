@@ -1,0 +1,235 @@
+<html>
+    <head>
+
+ 
+
+        <title>Posts</title>
+        <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css?family=Chicle|Roboto" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+       
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+        <style>
+             .conc{
+     background:#003366;
+     padding: 20px;
+     color:white;
+     border-radius: 5px;
+ }
+            label{
+                color:white;
+            }
+            .contains{
+                display: flex;
+                flex-flow: column;
+            }
+            .logo{
+                font-family: 'Chicle', cursive;
+                font-size: 30px;
+            }
+       
+        h2{
+            font-weight: bold;
+            color:grey;
+
+        }
+        h4{
+            font-weight: bold;
+            color:grey;
+        }
+        em{
+            font-family: 'Roboto', sans-serif;
+            color:grey;
+
+        }
+        nav{
+            display: flex;
+        }
+        .rightside{
+            background:red;
+            width:50%;
+        }
+
+        .bottom{
+            margin-top: 300px;
+        }
+        a{
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        textarea{
+            outline:none;
+            border-radius: 5px;
+            margin-top: 20PX;
+            margin-bottom: 20PX;
+            min-height: 300px;
+        }
+
+        .darkmode_text_col{
+            color:white;
+            background: pink;
+            border-radius: 5px;
+        }
+       
+        </style>
+
+    </head>
+
+    <body>
+         
+        
+ 
+         <nav id="nav" style="background:#F1948A;min-height: 40px;" >
+            <a href="/posts" style="margin-left:20px;" class="logo">WhatsTaboo.com</a>
+            <div   class="row">
+                
+                
+            </div>
+
+             
+            </div>
+          </nav>
+          
+        <div >
+            {% block content %}
+
+            {% endblock %}
+ 
+        </div>
+
+        <div class="bottom">
+            
+        <footer id="footer" style="background:#F1948A" class="page-footer">
+            <div class="container">
+              <div class="row">
+                <div class="col l6 s12">
+                  <h5 class="white-text">Whats Taboo in your world?</h5>
+                  <p class="grey-text text-lighten-4">Your world debunked.</p>
+                  <h5 class="white-text">Author?</h5>
+                  <p>Hi, my name is Tayyab Javed, I'm a computer science graduate turned Blogger. I like so many things so I decided to have a go at this blogging thing. Since I'm a coder at heart I decided why not create my own blogging platform, here it is.</p>
+                  <h5>Enjoy my blog posts?</h5>
+                  <p>Join my email list, I send out updates whenever I post. I promise not to be intrusive, abrasive or annoying. I promise</p>
+
+                </div>
+                <div class="col l4 offset-l2 s12">
+                  <h5 class="white-text">Contact Links</h5>
+                  <ul>
+                    <li><a class="grey-text text-lighten-3" href="#!">Facebook</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Twitter</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Instragram</a></li>
+                    <li><a class="grey-text text-lighten-3" href="#!">Telegram</a></li>
+                    
+                    <div   class="switch">
+                            <label style="color:white;font-family: 'Roboto', sans-serif;                            ">
+                              Light Mode
+                              <input id="darkMode" type="checkbox">
+                              <span class="lever"></span>
+                              Dark Mode
+                            </label>
+                          </div>
+                
+                </ul>
+                </div>
+              </div>
+            </div>
+            <div class="footer-copyright">
+              <div class="container">
+              © 2018 WhatsTaboo.com
+              <a class="grey-text text-lighten-4 right" href="/posts/complaint">Formal Content Removal Request</a>
+              </div>
+              
+            </div>
+          </footer>
+          <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+        </div>
+ 
+        <script>
+
+            var darkModeSwitch= document.getElementById("darkMode")
+
+            $(document).ready(function(){
+                //sort out the theme of the page
+                var v= localStorage.getItem("darkmodeval");
+                if(v !=null && v!=undefined ){
+                    if(v=="true"){
+                        darkModeSwitch.checked=true;
+                        document.body.style.backgroundColor="#212121";
+                        document.body.style.color="white";
+                    document.getElementById("footer").style.backgroundColor="#212121";
+                    document.getElementById("nav").style.backgroundColor="#212121";
+                    
+                    document.getElementsByClassName("collection-item").style.backgroundColor="#212121";
+                    }else{
+                        darkModeSwitch.checked=false;
+                        document.body.style.color="black";
+
+                        document.body.style.backgroundColor="white"
+                    document.getElementById("footer").style.backgroundColor="#F1948A";
+                    document.getElementById("nav").style.backgroundColor="#F1948A";
+                    }
+                }else{
+                    darkModeSwitch.checked=true;
+                        document.body.style.backgroundColor="#212121";
+                        document.body.style.color="white";
+
+                    document.getElementById("footer").style.backgroundColor="#212121";
+                    document.getElementById("nav").style.backgroundColor="#212121";
+                    
+                    document.getElementsByClassName("collection-item").style.backgroundColor="#212121"
+                }
+                document.body.style.backgroundColor = "white";
+
+            })
+            
+             darkModeSwitch.addEventListener("change",()=>{
+                 switch(darkModeSwitch.checked){
+
+                    case true:
+                    document.body.style.backgroundColor="#212121";
+                    document.body.style.color="white";
+                    document.getElementById("footer").style.backgroundColor="#212121";
+                    document.getElementById("nav").style.backgroundColor="#212121";
+                    
+                     localStorage.setItem("darkmodeval","true");
+                    console.log(localStorage.getItem("darkmodeval"))
+                    console.log("expected val true")
+
+                    break;
+                    case false:
+                    document.body.style.backgroundColor="white"
+                    document.body.style.color="black"
+                    document.getElementById("footer").style.backgroundColor="#F1948A";
+                    document.getElementById("nav").style.backgroundColor="#F1948A";
+                    localStorage.setItem("darkmodeval","false");
+                    console.log(localStorage.getItem("darkmodeval"))
+                    console.log("expected val false")
+
+
+                    break;
+                    
+                }
+            })
+
+
+        $(document).ready(function() {
+            $("#slide-out").sidenav();
+  $("#selectedTest").formSelect();
+  
+  $('select').formSelect();
+  $('input#input_text, textarea#textarea2').characterCounter();
+
+        });
+        </script>
+ 
+    </body>
+</html>
